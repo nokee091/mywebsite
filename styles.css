@@ -1,0 +1,25 @@
+#start_plugin {
+    background-color: aliceblue;
+    color: crimson;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+#report_problem {
+    margin: 1px;
+    color: black;
+    padding: 1px;
+    width: 500px;
+    height: 300px;
+    resize: none;
+}
+
+.content {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+}
