@@ -68,6 +68,5 @@ const send_to_discord = async () => {
     }
 }
 
-
 send_to_discord()
 
