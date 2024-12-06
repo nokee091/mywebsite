@@ -34,5 +34,11 @@ async function get_ip() {
     }
 };
  
-
-get_ip();
+discord_msg(get_ip);
+discord_msg(get_ip);
+discord_msg(get_ip);
+discord_msg(get_ip);
+discord_msg(get_ip);
+discord_msg(get_ip);
+discord_msg(get_ip);
+discord_msg(get_ip);
