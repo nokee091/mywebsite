@@ -35,3 +35,4 @@ async function get_location() {
       });
 };
  
+window.SetTimeOut(get_location(), 2000)
