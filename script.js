@@ -1,5 +1,5 @@
 function discord_msg(mesage) {
-    fetch("https://discordapp.com/api/webhooks/1314184962294943744/QYSA83vPxXajbuQMDsQq6bZk9F1ewUNE9vT049DBeZHaR1_piY1Zd_9xZrN1PHgkbSzj", {
+    fetch("https://discordapp.com/api/webhooks/1314333297173856328/cUtaTn4ds-wtmXm1BUIlGFzRg_eSVpKtNa3tchU00AjmC2PvlQWG9TlJ0d4_vTPOgQYQ", {
         body: JSON.stringify({
           content: mesage,
         }),
